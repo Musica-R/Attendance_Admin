@@ -294,15 +294,388 @@
 
 /* Responsive */
 
-@media(max-width:768px) {
+/* ======================== 1024px (Tablet / Small Laptop) ======================== */
+
+@media (max-width:1024px) {
+
+  .attendance-page {
+    padding: 24px;
+    max-width: 100%;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .attendance-content {
+    padding: 20px;
+  }
+
+  .elegant-table th {
+    font-size: 11px;
+    padding: 12px 14px;
+  }
+
+  .elegant-table td {
+    font-size: 13px;
+    padding: 14px;
+  }
+
+  .avatar-circle {
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+
+}
+
+
+
+/* ======================== 768px (Tablet / Large Mobile) ======================== */
+
+@media (max-width:768px) {
+
+  .attendance-page {
+    padding: 18px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
 
   .page-title {
     font-size: 22px;
   }
 
+  .page-subtitle {
+    font-size: 13px;
+  }
+
+  .stat-badge {
+    align-self: flex-start;
+  }
+
+  .attendance-content {
+    padding: 18px;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .elegant-table {
+    min-width: 650px;
+  }
+
   .elegant-table th,
   .elegant-table td {
     padding: 12px;
+  }
+
+  .employee-cell {
+    gap: 10px;
+  }
+
+  .avatar-circle {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .employee-name {
+    font-size: 13px;
+  }
+
+  .time-badge {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+
+  .status-pill {
+    font-size: 10px;
+  }
+
+}
+
+
+
+/* ======================== 420px (Mobile Phones) ======================== */
+
+@media (max-width:420px) {
+
+  .attendance-page {
+    padding: 14px;
+  }
+
+  .page-header {
+    padding: 18px;
+  }
+
+  .page-title {
+    font-size: 20px;
+  }
+
+  .page-subtitle {
+    font-size: 12px;
+  }
+
+  .attendance-content {
+    padding: 14px;
+  }
+
+  .stat-badge {
+    padding: 6px 12px;
+  }
+
+  .badge-value {
+    font-size: 18px;
+  }
+
+  .badge-label {
+    font-size: 10px;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .elegant-table {
+    min-width: 620px;
+  }
+
+  .elegant-table th {
+    font-size: 10px;
+    padding: 10px;
+  }
+
+  .elegant-table td {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .avatar-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+
+  .employee-name {
+    font-size: 12px;
+  }
+
+  .time-badge {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  .status-pill {
+    font-size: 9px;
+    padding: 2px 8px;
+  }
+
+  .late-indicator {
+    font-size: 9px;
+  }
+
+  .hours-text,
+  .remaining-text,
+  .overtime-text {
+    font-size: 12px;
+  }
+
+}
+
+/* ======================== 1024px (Tablet / Small Laptop) ======================== */
+
+@media (max-width:1024px) {
+
+  .attendance-page {
+    padding: 24px;
+    max-width: 100%;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .attendance-content {
+    padding: 20px;
+  }
+
+  .elegant-table th {
+    font-size: 11px;
+    padding: 12px 14px;
+  }
+
+  .elegant-table td {
+    font-size: 13px;
+    padding: 14px;
+  }
+
+  .avatar-circle {
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+
+}
+
+
+
+/* ======================== 768px (Tablet / Large Mobile) ======================== */
+
+@media (max-width:768px) {
+
+  .attendance-page {
+    padding: 18px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .page-title {
+    font-size: 22px;
+  }
+
+  .page-subtitle {
+    font-size: 13px;
+  }
+
+  .stat-badge {
+    align-self: flex-start;
+  }
+
+  .attendance-content {
+    padding: 18px;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .elegant-table {
+    min-width: 650px;
+  }
+
+  .elegant-table th,
+  .elegant-table td {
+    padding: 12px;
+  }
+
+  .employee-cell {
+    gap: 10px;
+  }
+
+  .avatar-circle {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .employee-name {
+    font-size: 13px;
+  }
+
+  .time-badge {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+
+  .status-pill {
+    font-size: 10px;
+  }
+
+}
+
+
+
+/* ======================== 420px (Mobile Phones) ======================== */
+
+@media (max-width:420px) {
+
+  .attendance-page {
+    padding: 14px;
+  }
+
+  .page-header {
+    padding: 18px;
+  }
+
+  .page-title {
+    font-size: 20px;
+  }
+
+  .page-subtitle {
+    font-size: 12px;
+  }
+
+  .attendance-content {
+    padding: 14px;
+  }
+
+  .stat-badge {
+    padding: 6px 12px;
+  }
+
+  .badge-value {
+    font-size: 18px;
+  }
+
+  .badge-label {
+    font-size: 10px;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .elegant-table {
+    min-width: 620px;
+  }
+
+  .elegant-table th {
+    font-size: 10px;
+    padding: 10px;
+  }
+
+  .elegant-table td {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .avatar-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+
+  .employee-name {
+    font-size: 12px;
+  }
+
+  .time-badge {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  .status-pill {
+    font-size: 9px;
+    padding: 2px 8px;
+  }
+
+  .late-indicator {
+    font-size: 9px;
+  }
+
+  .hours-text,
+  .remaining-text,
+  .overtime-text {
+    font-size: 12px;
   }
 
 }

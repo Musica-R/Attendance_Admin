@@ -185,77 +185,145 @@ body {
     backdrop-filter: blur(2px);
 }
 
-/* ======================== RESPONSIVE 1024px ======================== */
+/* ======================== 1024px (Tablet / Small Laptop) ======================== */
 @media (max-width: 1024px) {
-    .sidebar {
-        width: 220px;
+
+    .sidebar{
+        width:220px;
     }
 
-    .main-content {
-        padding: 22px;
+    .sidebar-header h2{
+        font-size:20px;
     }
+
+    .nav-item{
+        font-size:14px;
+        padding:12px 20px;
+    }
+
+    .nav-icon{
+        font-size:18px;
+    }
+
+    .main-content{
+        padding:22px;
+    }
+
 }
 
-/* ======================== RESPONSIVE 768px ======================== */
+
+/* ======================== 768px (Tablet / Large Mobile) ======================== */
 @media (max-width: 768px) {
-    .mobile-topbar {
-        display: flex;
+
+    .admin-layout{
+        flex-direction:column;
     }
 
-    .sidebar-overlay {
-        display: block;
+    .mobile-topbar{
+        display:flex;
     }
 
-    .admin-layout {
-        flex-direction: column;
+    /* overlay */
+    .sidebar-overlay{
+        display:block;
+        opacity:0;
+        pointer-events:none;
+        transition:opacity 0.3s ease;
     }
 
-    /* Sidebar slides in from the left */
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 260px;
-        transform: translateX(-100%);
-        z-index: 200;
+    .sidebar-overlay.active{
+        opacity:1;
+        pointer-events:auto;
     }
 
-    .sidebar--open {
-        transform: translateX(0);
+    /* sidebar mobile */
+    .sidebar{
+        position:fixed;
+        top:0;
+        left:0;
+        width:260px;
+        height:100vh;
+        transform:translateX(-100%);
+        transition:transform 0.3s ease;
+        z-index:200;
     }
 
-    .sidebar-close-btn {
-        display: flex;
+    .sidebar.sidebar--open{
+        transform:translateX(0);
     }
 
-    .main-content {
-        padding: 16px;
-        min-height: calc(100vh - 68px);
+    .sidebar-close-btn{
+        display:block;
     }
+
+    .sidebar-header{
+        padding:24px 20px;
+    }
+
+    .sidebar-nav{
+        padding:18px 0;
+    }
+
+    .nav-item{
+        padding:12px 20px;
+        font-size:14px;
+    }
+
+    .main-content{
+        padding:18px;
+        min-height:calc(100vh - 64px);
+    }
+
 }
 
-/* ======================== RESPONSIVE 420px ======================== */
-@media (max-width: 480px) {
-    .sidebar {
-        width: 82vw;
-        max-width: 300px;
+
+/* ======================== 420px (Mobile Phones) ======================== */
+@media (max-width: 420px) {
+
+    .sidebar{
+        width:80vw;
+        max-width:280px;
     }
 
-    .mobile-topbar {
-        padding: 12px 14px;
+    .sidebar-header{
+        padding:20px 18px;
     }
 
-    .mobile-brand {
-        font-size: 17px;
+    .sidebar-header h2{
+        font-size:18px;
     }
 
-    .main-content {
-        padding: 12px;
+    .nav-item{
+        font-size:13.5px;
+        padding:11px 18px;
+        gap:12px;
     }
 
-    .nav-item {
-        font-size: 14px;
-        padding: 13px 20px;
+    .nav-icon{
+        font-size:17px;
     }
+
+    .logout-btn{
+        font-size:14px;
+        padding:12px 14px;
+    }
+
+    .mobile-topbar{
+        padding:12px 14px;
+    }
+
+    .mobile-brand{
+        font-size:16px;
+    }
+
+    .hamburger-btn{
+        width:36px;
+        height:36px;
+        font-size:20px;
+    }
+
+    .main-content{
+        padding:12px;
+    }
+
 }

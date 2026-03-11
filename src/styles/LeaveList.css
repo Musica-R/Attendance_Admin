@@ -589,19 +589,41 @@
   cursor: not-allowed;
 }
 
-/* ======================== RESPONSIVE 1024px ======================== */
-@media (max-width: 1024px) {
+
+/* ======================== 1024px (Tablet / Small Laptop) ======================== */
+
+@media (max-width:1024px) {
+
+  .leavelist-page {
+    padding: 18px;
+  }
+
   .leavelist-header {
     padding: 22px 24px;
+    border-radius: 18px;
   }
 
   .leavelist-title h1 {
-    font-size: 21px;
+    font-size: 22px;
+  }
+
+  .ll-title-icon {
+    font-size: 30px;
+    padding: 9px;
+  }
+
+  .ll-search {
+    width: 210px;
+    font-size: 13px;
   }
 
   .ll-summary-row {
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
+  }
+
+  .ll-sum-num {
+    font-size: 26px;
   }
 
   .ll-table th,
@@ -610,18 +632,25 @@
   }
 
   .ll-reason-cell {
-    max-width: 150px;
+    max-width: 160px;
   }
+
 }
 
-/* ======================== RESPONSIVE 768px ======================== */
-@media (max-width: 768px) {
+
+/* ======================== 768px (Tablet / Large Mobile) ======================== */
+
+@media (max-width:768px) {
+
+  .leavelist-page {
+    padding: 16px;
+  }
+
   .leavelist-header {
     flex-direction: column;
     align-items: flex-start;
-    border-radius: 16px;
+    gap: 14px;
     padding: 18px 20px;
-    margin-bottom: 18px;
   }
 
   .leavelist-controls {
@@ -629,63 +658,17 @@
     justify-content: space-between;
   }
 
-  .ll-search {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
   .ll-search-wrap {
     flex: 1;
   }
 
+  .ll-search {
+    width: 100%;
+  }
+
   .ll-summary-row {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Switch to cards on tablet */
-  .ll-table-wrap {
-    display: none;
-  }
-
-  .ll-card-list {
-    display: flex;
-    flex-direction: column;
     gap: 14px;
-  }
-
-  .ll-tabs {
-    gap: 6px;
-  }
-
-  .ll-tab {
-    padding: 8px 14px;
-    font-size: 12px;
-  }
-}
-
-/* ======================== RESPONSIVE 420px ======================== */
-@media (max-width: 480px) {
-  .leavelist-header {
-    border-radius: 14px;
-    padding: 14px 16px;
-  }
-
-  .leavelist-title h1 {
-    font-size: 18px;
-  }
-
-  .leavelist-title p {
-    font-size: 12px;
-  }
-
-  .ll-title-icon {
-    font-size: 26px;
-    padding: 8px;
-  }
-
-  .ll-summary-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
   }
 
   .ll-sum-num {
@@ -697,12 +680,92 @@
   }
 
   .ll-tab {
-    padding: 7px 12px;
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  /* Switch to card layout */
+
+  .ll-table-wrap {
+    display: none;
+  }
+
+  .ll-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .ll-card {
+    border-radius: 14px;
+  }
+
+  .ll-card-head {
+    padding: 14px 16px;
+  }
+
+  .ll-card-body {
+    padding: 14px 16px;
+  }
+
+}
+
+
+/* ======================== 420px (Mobile Phones) ======================== */
+
+@media (max-width:420px) {
+
+  .leavelist-page {
+    padding: 12px;
+  }
+
+  .leavelist-header {
+    padding: 14px 16px;
+    border-radius: 14px;
+  }
+
+  .ll-title-icon {
+    font-size: 24px;
+    padding: 7px;
+  }
+
+  .leavelist-title h1 {
+    font-size: 18px;
+  }
+
+  .leavelist-title p {
+    font-size: 12px;
+  }
+
+  .ll-search {
+    font-size: 12px;
+    padding: 10px 14px 10px 36px;
+  }
+
+  .ll-summary-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .ll-summary-card {
+    padding: 14px 10px;
+  }
+
+  .ll-sum-num {
+    font-size: 22px;
+  }
+
+  .ll-sum-label {
+    font-size: 10px;
+  }
+
+  .ll-tab {
+    padding: 6px 10px;
     font-size: 11px;
   }
 
   .ll-tab-count {
-    padding: 1px 6px;
+    font-size: 10px;
   }
 
   .ll-card-list {
@@ -718,16 +781,33 @@
     gap: 8px;
   }
 
+  .ll-card-label {
+    font-size: 10px;
+    min-width: 70px;
+  }
+
+  .ll-card-val {
+    font-size: 12px;
+  }
+
   .ll-card-actions {
     flex-direction: column;
+    gap: 6px;
+  }
+
+  .ll-card-action-btn {
+    font-size: 11px;
+    padding: 7px;
   }
 
   .ll-error {
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
   }
 
   .ll-retry {
     margin-left: 0;
   }
+
 }
