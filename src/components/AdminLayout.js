@@ -1,0 +1,98 @@
+import React, { useState } from 'react';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { FiHome, FiUserPlus, FiLogOut, FiCalendar, FiUsers, FiMenu, FiX, FiFileText } from 'react-icons/fi';
+import '../styles/AdminLayout.css';
+
+const AdminLayout = () => {
+    const navigate = useNavigate();
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        navigate('/');
+    };
+
+    const closeSidebar = () => setSidebarOpen(false);
+
+    return (
+        <div className="admin-layout">
+            {/* Mobile top bar */}
+            <div className="mobile-topbar">
+                <button className="hamburger-btn" onClick={() => setSidebarOpen(true)}>
+                    <FiMenu />
+                </button>
+                <h2 className="mobile-brand">Admin Panel</h2>
+            </div>
+
+            {/* Overlay for mobile */}
+            {sidebarOpen && (
+                <div className="sidebar-overlay" onClick={closeSidebar} />
+            )}
+
+            <aside className={`sidebar ${sidebarOpen ? 'sidebar--open' : ''}`}>
+                <div className="sidebar-header">
+                    <h2>Admin Panel</h2>
+                    <button className="sidebar-close-btn" onClick={closeSidebar}>
+                        <FiX />
+                    </button>
+                </div>
+
+                <nav className="sidebar-nav">
+                    <NavLink
+                        to="/admin"
+                        end
+                        className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
+                        onClick={closeSidebar}
+                    >
+                        <FiHome className="nav-icon" /><span>Dashboard</span>
+                    </NavLink>
+
+                    <NavLink
+                        to="/admin/add-employee"
+                        className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
+                        onClick={closeSidebar}
+                    >
+                        <FiUserPlus className="nav-icon" /> <span>Add Employee</span>
+                    </NavLink>
+
+                    <NavLink
+                        to="/admin/emp-list"
+                        className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
+                        onClick={closeSidebar}
+                    >
+                        <FiUsers className="nav-icon" /> <span>Employee List</span>
+                    </NavLink>
+
+                    <NavLink
+                        to="/admin/leave-list"
+                        className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
+                        onClick={closeSidebar}
+                    >
+                        <FiFileText className="nav-icon" /> <span>Leave List</span>
+                    </NavLink>
+
+                    <NavLink
+                        to="/admin/attendance"
+                        className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
+                        onClick={closeSidebar}
+                    >
+                        <FiCalendar className="nav-icon" /> <span>Attendance</span>
+                    </NavLink>
+                </nav>
+
+                <div className="sidebar-footer">
+                    <button onClick={handleLogout} className="logout-btn">
+                        <FiLogOut className="nav-icon" /><span>Logout</span>
+                    </button>
+                </div>
+            </aside>
+
+            <main className="main-content">
+                <Outlet />
+            </main>
+        </div>
+    );
+};
+
+export default AdminLayout;
