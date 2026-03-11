@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/LeaveList.css';
-import { FiCalendar, FiClock, FiCheckCircle, FiXCircle, FiRefreshCw, FiCheck, FiX, FiAlertCircle, FiSearch } from 'react-icons/fi';
+import { FiCalendar, FiClock, FiCheckCircle, FiXCircle, FiRefreshCw,FiAlertCircle, FiSearch } from 'react-icons/fi';
 
 const LEAVE_LIST_API = 'https://hrms.mpdatahub.com/api/leave-list';
 const UPDATE_STATUS_API = 'https://hrms.mpdatahub.com/api/update-Leave-status';
