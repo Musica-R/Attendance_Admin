@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/LeaveList.css';
-import { FiCalendar, FiClock, FiCheckCircle, FiXCircle, FiRefreshCw,FiAlertCircle, FiSearch } from 'react-icons/fi';
+import { FiCalendar, FiClock, FiCheckCircle, FiXCircle, FiRefreshCw, FiAlertCircle, FiSearch } from 'react-icons/fi';
 
 const LEAVE_LIST_API = 'https://hrms.mpdatahub.com/api/leave-list';
 const UPDATE_STATUS_API = 'https://hrms.mpdatahub.com/api/update-Leave-status';
@@ -125,6 +125,16 @@ export default function LeaveList() {
     rejected: leaves.filter((l) => l.status === 'rejected').length,
   };
 
+  function formatDuration(duration) {
+    if (parseFloat(duration) === 1.0) return "Full Day";
+    if (parseFloat(duration) === 0.5) return "Half Day";
+    return duration;
+  }
+
+  function formatHalfDay(halfday) {
+    if (!halfday) return "—";
+    return halfday.charAt(0).toUpperCase() + halfday.slice(1);
+  }
 
   return (
     <div className="leavelist-page">
@@ -269,6 +279,8 @@ export default function LeaveList() {
                       <th>Leave Date</th>
                       <th>Reason</th>
                       <th>Applied On</th>
+                      <th>Leave Duration</th>
+                      <th>Session</th>
                       <th>Status</th>
                       <th className="ll-txt-center">Actions</th>
                     </tr>
@@ -315,6 +327,14 @@ export default function LeaveList() {
                           </td>
 
                           <td>
+                            {formatDuration(leave.duration)}
+                          </td>
+
+                          <td>
+                            {formatHalfDay(leave.half_day)}
+                          </td>
+
+                          <td>
                             <span className={`ll-status ${sc.cls}`}>
                               {sc.icon} {sc.label}
                             </span>
@@ -337,9 +357,7 @@ export default function LeaveList() {
 
                             ) : (
 
-                              <span className="ll-status-fixed">
-                                {sc.icon} {sc.label}
-                              </span>
+                              <span className="ll-status-fixed"> {sc.icon} {sc.label}</span>
 
                             )}
 

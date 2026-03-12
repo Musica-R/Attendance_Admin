@@ -168,12 +168,7 @@ export default function EmpList() {
 
             <div className="emp-card-top">
 
-              <img
-                src={emp.profile_img}
-                alt={emp.name}
-                className="emp-avatar"
-              />
-
+              <img src={emp.profile_img} alt={emp.name} className="emp-avatar"/>
               <div className="emp-badge">{emp.empid}</div>
 
             </div>
