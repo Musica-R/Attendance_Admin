@@ -65,6 +65,25 @@ const AttendanceList = () => {
         );
     }
 
+    // FORMAT WORKED HOURS
+    const formatDuration = (timeString) => {
+        if (!timeString || timeString === "00:00:00") return "--";
+
+        const [hours, minutes] = timeString.split(":").map(Number);
+
+        if (hours === 0 && minutes === 0) return "--";
+
+        if (hours === 0) {
+            return `${minutes} min`;
+        }
+
+        if (minutes === 0) {
+            return `${hours} hr`;
+        }
+
+        return `${hours} hr ${minutes} min`;
+    };
+
     return (
         <div className="attendance-page fade-in-up">
 
@@ -177,16 +196,15 @@ const AttendanceList = () => {
                                         {/* WORKED HOURS */}
                                         <td>
                                             <span className="hours-text">
-                                                {record.worked_hours &&
-                                                    record.worked_hours !== "00:00:00"
-                                                    ? record.worked_hours
-                                                    : '--'}
+                                                {formatDuration(record.worked_hours)}
                                             </span>
                                         </td>
 
                                         {/* SHORTFALL / OVERTIME */}
                                         <td>
-                                            {record.overtimed_hours}
+                                            <span className="hours-text">
+                                                {formatDuration(record.overtimed_hours)}
+                                            </span>
                                         </td>
 
                                     </tr>
