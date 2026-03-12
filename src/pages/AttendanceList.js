@@ -1,9 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/AttendanceList.css';
+import Lottie from 'react-lottie';
+import animationData from '../LottieFiles/Completing Tasks.json';
 
 const AttendanceList = () => {
     const [attendanceData, setAttendanceData] = useState([]);
     const [loading, setLoading] = useState(true);
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+        }
+    };
+
 
     useEffect(() => {
         const fetchAttendance = async () => {
@@ -90,11 +102,13 @@ const AttendanceList = () => {
             {/* HEADER */}
             <div className="page-header glass-panel">
                 <div className="header-content">
-                    <div>
-                        <h1 className="page-title">Attendance Records</h1>
-                        <p className="page-subtitle">
-                            Track and manage employee daily presence and work hours.
-                        </p>
+
+                    <div className="permission-title-group">
+                        <Lottie options={defaultOptions} height={70} width={70} />
+                        <div>
+                            <h1>Attendance Records</h1>
+                            <p>Track and manage employee daily presence and work hours.</p>
+                        </div>
                     </div>
 
                     <div className="header-actions">

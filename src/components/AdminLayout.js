@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { FiHome, FiUserPlus, FiLogOut, FiCalendar, FiUsers, FiMenu, FiX, FiFileText } from 'react-icons/fi';
+import { FiHome, FiUserPlus, FiLogOut, FiCalendar, FiUsers, FiMenu, FiX, FiFileText, FiShield } from 'react-icons/fi';
 import '../styles/AdminLayout.css';
 
 const AdminLayout = () => {
@@ -73,11 +73,19 @@ const AdminLayout = () => {
                     </NavLink>
 
                     <NavLink
+                        to="/admin/permission-list"
+                        className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
+                        onClick={closeSidebar}
+                    >
+                        <FiShield className="nav-icon" /> <span>Permission List</span>
+                    </NavLink>
+
+                    <NavLink
                         to="/admin/attendance"
                         className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
                         onClick={closeSidebar}
                     >
-                        <FiCalendar className="nav-icon" /> <span>Attendance</span>
+                        <FiCalendar className="nav-icon" /> <span>Attendance List</span>
                     </NavLink>
                 </nav>
 

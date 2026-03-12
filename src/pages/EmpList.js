@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../styles/EmpList.css";
-import { FiEdit2, FiX, FiSave, FiUsers, FiSearch } from "react-icons/fi";
+import { FiEdit2, FiX, FiSave, FiSearch } from "react-icons/fi";
+import Lottie from 'react-lottie';
+import animationData from '../LottieFiles/Employee Search.json';
 
 const API_URL = "https://hrms.mpdatahub.com/api/employee-List";
 const UPDATE_URL = "https://hrms.mpdatahub.com/api/update-profile";
@@ -20,6 +22,16 @@ export default function EmpList() {
   useEffect(() => {
     fetchEmployees();
   }, []);
+
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
 
   /* ---------------- FETCH EMPLOYEES ---------------- */
 
@@ -98,7 +110,7 @@ export default function EmpList() {
       if (editData.address) formData.append("address", editData.address);
       if (editData.dob) formData.append("dob", editData.dob);
 
-      
+
 
       const res = await fetch(UPDATE_URL, {
         method: "POST",
@@ -143,7 +155,7 @@ export default function EmpList() {
       <div className="emplist-header">
 
         <div className="emplist-title">
-          <FiUsers className="title-icon" />
+          <Lottie options={defaultOptions} height={90} width={70} />
           <div>
             <h1>Employee List</h1>
             <p>{employees.length} employees</p>
@@ -168,7 +180,7 @@ export default function EmpList() {
 
             <div className="emp-card-top">
 
-              <img src={emp.profile_img} alt={emp.name} className="emp-avatar"/>
+              <img src={emp.profile_img} alt={emp.name} className="emp-avatar" />
               <div className="emp-badge">{emp.empid}</div>
 
             </div>

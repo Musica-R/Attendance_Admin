@@ -126,8 +126,19 @@ export default function LeaveList() {
   };
 
   function formatDuration(duration) {
-    if (parseFloat(duration) === 1.0) return "Full Day";
-    if (parseFloat(duration) === 0.5) return "Half Day";
+    const d = parseFloat(duration);
+
+    if (d === 0.5) return "Half Day";
+
+    if (d % 1 === 0) {
+      return `${d} Day${d > 1 ? "s" : ""}`;
+    }
+
+    if (d % 1 === 0.5) {
+      const fullDays = Math.floor(d);
+      return `${fullDays} Day${fullDays > 1 ? "s" : ""} + Half Day`;
+    }
+
     return duration;
   }
 

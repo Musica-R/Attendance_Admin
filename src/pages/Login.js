@@ -19,6 +19,7 @@ const Login = () => {
             preserveAspectRatio: 'xMidYMid slice'
         }
     };
+    
     const handleLogin = async (e) => {
         e.preventDefault();
         setError('');

@@ -7,6 +7,7 @@ import RegistrationForm from './pages/RegistrationForm';
 import AttendanceList from './pages/AttendanceList';
 import EmpList from './pages/EmpList';
 import LeaveList from './pages/LeaveList';
+import PermissionList from './pages/PermissionList';
 import './styles/App.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="add-employee" element={<RegistrationForm />} />
             <Route path="emp-list" element={<EmpList />} />
             <Route path="leave-list" element={<LeaveList />} />
+            <Route path="permission-list" element={<PermissionList />} />
             <Route path="attendance" element={<AttendanceList />} />
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
