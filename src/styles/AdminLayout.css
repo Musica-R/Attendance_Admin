@@ -29,7 +29,6 @@ body {
     z-index: 200;
     transition: transform 0.3s ease;
 }
-
 /* ======================== HEADER ======================== */
 .sidebar-header {
     padding: 30px 24px;
@@ -60,6 +59,11 @@ body {
 }
 
 /* ======================== NAVIGATION ======================== */
+
+.sidebar-nav::-webkit-scrollbar {
+  display: none; /* or width/height: 0; */
+}
+
 .sidebar-nav {
     flex-grow: 1;
     padding: 24px 0;

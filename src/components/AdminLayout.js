@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { FiHome, FiUserPlus, FiLogOut, FiCalendar, FiUsers, FiMenu, FiX, FiFileText, FiShield } from 'react-icons/fi';
 import '../styles/AdminLayout.css';
+import { BsSuitcase2 } from 'react-icons/bs';
+import { MdOutlineNotificationsActive } from 'react-icons/md';
+import { GoOrganization } from 'react-icons/go';
+import { IoTicketOutline } from 'react-icons/io5';
 
 const AdminLayout = () => {
     const navigate = useNavigate();
@@ -86,6 +90,38 @@ const AdminLayout = () => {
                         onClick={closeSidebar}
                     >
                         <FiCalendar className="nav-icon" /> <span>Attendance List</span>
+                    </NavLink>
+
+                    <NavLink
+                        to="/admin/add-holiday"
+                        className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
+                        onClick={closeSidebar}
+                    >
+                        <BsSuitcase2 className="nav-icon" /> <span>Holiday</span>
+                    </NavLink>
+
+                    <NavLink
+                        to="/admin/add-notification"
+                        className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
+                        onClick={closeSidebar}
+                    >
+                        <MdOutlineNotificationsActive className="nav-icon" /> <span>Notification</span>
+                    </NavLink>
+
+                    <NavLink
+                        to="/admin/add-company"
+                        className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
+                        onClick={closeSidebar}
+                    >
+                        <GoOrganization className="nav-icon" /> <span>Company Details</span>
+                    </NavLink>
+
+                    <NavLink
+                        to="/admin/raise-ticket"
+                        className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
+                        onClick={closeSidebar}
+                    >
+                        <IoTicketOutline className="nav-icon" /> <span>Raise Ticket</span>
                     </NavLink>
                 </nav>
 

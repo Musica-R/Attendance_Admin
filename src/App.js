@@ -1,5 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 import Login from './pages/Login';
 import AdminLayout from './components/AdminLayout';
 import DashboardHome from './pages/DashboardHome';
@@ -9,6 +14,10 @@ import EmpList from './pages/EmpList';
 import LeaveList from './pages/LeaveList';
 import PermissionList from './pages/PermissionList';
 import './styles/App.css';
+import HolidayForm from './pages/HolidayForm';
+import Notification from './pages/Notification';
+import CompanyDetails from './pages/CompanyDetails';
+import RaiseTicket from './pages/RaiseTicket';
 
 function App() {
   return (
@@ -23,6 +32,10 @@ function App() {
             <Route path="leave-list" element={<LeaveList />} />
             <Route path="permission-list" element={<PermissionList />} />
             <Route path="attendance" element={<AttendanceList />} />
+            <Route path="add-holiday" element={<HolidayForm />} />
+            <Route path="add-notification" element={<Notification />} />
+            <Route path="add-company" element={<CompanyDetails />} />
+            <Route path="raise-ticket" element={<RaiseTicket />} />
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
